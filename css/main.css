@@ -1,0 +1,19 @@
+.loadingprocesslayer {
+	font-size: 16px;
+	color:white;
+	font-weight:bold;
+	font-style: italic;
+	width: 500px;
+	height: 50px;
+	z-index:1005;
+	position: absolute;
+	text-align: center;
+	opacity: 1.0;
+	color: black;
+}
+
+.loadingprocesslayer span {
+	z-index: 6000;
+	opacity: 2 !important;
+	text-shadow: 1px 1px 1px gray, 0 0 1em red;
+}
