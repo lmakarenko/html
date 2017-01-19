@@ -1,6 +1,7 @@
-html{ height:100%;width:100%;}
+html{ height:100%;width:100%;margin:0;padding:0;}
 body{
     color:#7f7f7f;
+    margin:0;padding:0;
 }
 form,input,label{
     display:block;
@@ -27,19 +28,22 @@ form,input,label{
 }
 .pad2{
     border-top:1px solid #e5e5e5;
-    min-height:140px;
+    min-height:20px;
 }
 .pad-title{
     
 }
 .wrapper{
     padding:10px 0;
+    overflow:hidden;
+    position:relative;
 }
 #contr-name{
     font-weight:bold;
+    color:#3ba3d7;
 }
 #exchange-descr{
-    padding:10px 0;
+    padding:10px 0 15px 0;
 }
 #bonus-exchange-form{
     position:relative;
@@ -48,7 +52,9 @@ form,input,label{
 }
 #bonus-exchange-form input[type="text"]{
     width:100%;
-    margin-bottom:10px;
+    margin-bottom:20px;
+    font-size: 18px;
+    color: #7f7f7f;
 }
 #bonus-exchange-form label{
     font-size: 14px;
@@ -77,8 +83,17 @@ form,input,label{
     position:relative;
     padding: 0 30px;
     overflow: hidden;
-    /* width: 898px; */
-    /* margin: 0 auto; */
+    width:100%;
+}
+.items-inner-c{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+.items-inner{
+    position:relative;
+    left:0;
+    z-index:1;
 }
 #items-slider{
     padding:0 30px;
@@ -87,20 +102,26 @@ form,input,label{
     background:url("../images/iframe/contr-bg.png") 0 0 no-repeat;
     width:102px; height:93px;
     float:left;
-    margin:0 5px;
+    margin:5px;
     cursor:pointer;
 }
-.item:hover{
+.item-h{
     background:url("../images/iframe/contr-bg-h.png") 0 0 no-repeat;
 }
-.item:active{
+.item-a{
     background:url("../images/iframe/contr-bg-a.png") 0 0 no-repeat;
+}
+.item > img{
+    width:92px; height:45px;
+    margin-left:5px;
+    margin-top:17px;
 }
 .arrow{
     position:absolute;
     width:20px; height:20px;
     background:url("../images/iframe/arrows.png") 0 0 no-repeat;
     cursor:pointer;
+    z-index:2;
 }
 .arrow-left{
     left:5px; top:36px;

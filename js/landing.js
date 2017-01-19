@@ -181,11 +181,11 @@ function goToStep(i_){
 
     rescale();
 
-if(i_ < i_sel){
-    anim_($('#data-slides-w'), {'left':'+=' + (i_sel - i_) * ww +'px'}, 600);
-} else {
-    anim_($('#data-slides-w'), {'left':'-=' + (i_ - i_sel) * ww +'px'}, 600);
-}
+    if(i_ < i_sel){
+        anim_($('#data-slides-w'), {'left':'+=' + (i_sel - i_) * ww +'px'}, 600);
+    } else {
+        anim_($('#data-slides-w'), {'left':'-=' + (i_ - i_sel) * ww +'px'}, 600);
+    }
 
     i_sel = i_;
 
