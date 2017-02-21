@@ -1,138 +1,397 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
 
-    <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <link type="text/css" rel="stylesheet" href="css/main.css?t=1487331097">
     <script type="text/javascript" src="js/jquery/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <meta charset="utf-8" />
-    <meta name="description" content="Здесь можно ввести код с бутылки tornado, торнадо" />
-    <meta name="keywords" content="торнадо, tornado, код, ввести, получить бонус" />
-
-
+    <meta charset="utf-8">
     <title>WASD</title>
-    <link rel="stylesheet" href="css/iframe.css" type="text/css" />
+    <link rel="stylesheet" href="css/iframe.css?t=1487331097" type="text/css">
     <script type="text/javascript" src="js/jquery.placeholder.js"></script>
-    <script type="text/javascript" src="js/iframe.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="js/iframe.js?t=1487331097"></script>
     <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script type="text/javascript">
+        var ukey = 'e2510a1d083ba5d6bfe3eb74a86390eab43dce09';
+    </script>
 
 </head>
 <body>
-    <div class="pad">
+    <img id="slide-loading" src="/site/skins/manager/public/img/ajax-loader.gif" />
+    <div class="pad pad-top">
         <span class="pad-title">Обмен бонусов</span>
     </div>
-    <div class="wrapper">
-        <form method="post" action="" id="bonus-exchange-form" name="bonus-exchange">
-            <div id="contr-name">World of Tanks</div>
-            <div id="exchange-descr">Обмен бонусов на золото</div>
-            <label>Введите колличество меняемых бонусов</label>
-            <input id="bonus-cnt" name="bonus_cnt" type="text" />
-            <label>Введите свой игровой логин</label>
-            <input id="user-login" name="user_login" type="text" />
-            <div class="clear"></div>
-            <input class="exchange-btn fr" id="exchange-btn" name="exchange_btn" type="submit" />
-            <div class="gold-cnt-c fr">
-                <span id="gold-cnt">359</span> золота
-            </div>
-            <div class="clear"></div>
-        </form>
-    </div>
-    <div class="pad">
-        <span class="pad-title">Популярное</span>
-    </div>
-    <div class="wrapper">
-        <div class="items-c" id="items-slider-popular">
-            <div class="arrow arrow-left"></div>
-            <div class="arrow arrow-right"></div>
-            <div class="items-inner-c">
-                <div class="items-inner">
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/steam.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/wot.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/warface.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/4game.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/war-thunder.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/tankionline.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/panzar.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/od.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/league-of-legends.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/prime-world.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/101xp.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/Arche-age.png" />
-                    </div>
-                    <div class="item">
-                        <img src="images/iframe/contr-logo/wowshps.png" />
-                    </div>
-                    <div class="clear"></div>
+    <div class="slides-w" id="slides-w">
+        <div class="slide-c" id="slide_1">
+            <div class="wrapper slide-inner-mid">
+                <div id="slide1-inner">
+                    <div class="slide-title" id="slide1-title">Поздравляем, вы стали участником акции!<br>Для продолжения введите промо-код</div>
+                    <form method="post" action="" id="bonus-exchange-form" name="bonus-exchange">
+                        <input placeholder="Введите промо-код" id="promo-code" name="promo_code" type="text" maxlength="23" class="input-txt" />
+                        <div id="error-promo" class="error"></div>
+                        <input class="slide-submit-btn exchange-btn" id="enter-promo-btn" name="enter_promo_btn" type="button" value="Продолжить" />
+                    </form>
                 </div>
             </div>
+            <div class="bg-img"></div>
+        </div>
+        <div class="slide-c" id="slide_2">
+            
+<div class="slide-c" id="slide_2">
+<script>
+    var bonus_cnt = parseInt('10');
+</script>
+<div class="wrapper" id="s2-wrapper-top">
+    <div class="slide-title" id="select-game-info">
+        Выберите игру
+    </div>
+    <div id="game-info-form">
+        <div class="pad-c slide-title" id="contr-name">Аллоды Онлайн</div>
+        <form method="post" action="" id="bonus-exchange-form" name="bonus-exchange">
+            <input placeholder="Введите логин" id="user-login" name="user_login" type="text" class="input-txt fl" />
+            <div class="gold-cnt-c fl">
+                Количество (<span class="exchange-currency">Кристаллов</span>): <span id="currency-cnt">10</span>
+            </div>
+            <div id="error-out" class="error"></div>
+            <input class="exchange-btn fl" id="exchange-btn" name="exchange_btn" type="button" value="Обменять">
+            <input type="hidden" name="contragent_id" id="contragent-id" value="11">
+            <div class="clear"></div>
+        </form>
+    </div>
+</div>
+
+<div class="inner-c">
+
+<div class="pad">
+    <span class="pad-title">Популярное</span>
+</div>
+<div class="wrapper">
+    <div class="items-c" id="items-slider-popular">
+        <div class="items-inner-c">
+            <div class="items-inner">
+                    <div class="item" data-id="644" data-p-1="Panzar" data-p-2="" data-p-3="0.74" data-p-4="кристалла" data-p-5="1" data-p-6="Введите имя персонажа" data-p-7="1">
+                        <img src="images/iframe/contr-logo/644.png">
+                        <div class="item-title">Panzar</div>
+                    </div>
+                                    <div class="item" data-id="142" data-p-1="Steam" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Введите название аккаунта" data-p-7="1">
+                        <img src="images/iframe/contr-logo/142.png">
+                        <div class="item-title">Steam</div>
+                    </div>
+                                    <div class="item" data-id="15" data-p-1="World of Tanks" data-p-2="" data-p-3="4.54" data-p-4="Золота" data-p-5="1" data-p-6="Введите электронную почту" data-p-7="1">
+                        <img src="images/iframe/contr-logo/15.png">
+                        <div class="item-title">World of Tanks</div>
+                    </div>
+                                    <div class="item" data-id="43" data-p-1="Вконтакте" data-p-2="" data-p-3="0.14" data-p-4="Голосов" data-p-5="1" data-p-6="Введите свой ID" data-p-7="1">
+                        <img src="images/iframe/contr-logo/43.png">
+                        <div class="item-title">Вконтакте</div>
+                    </div>
+                                    <div class="item" data-id="393" data-p-1="War Thunder" data-p-2="" data-p-3="3.30" data-p-4="Орла" data-p-5="1" data-p-6="Введите игровой e-mail (логин)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/393.png">
+                        <div class="item-title">War Thunder</div>
+                    </div>
+                                    <div class="item" data-id="106" data-p-1="Одноклассники" data-p-2="" data-p-3="1.00" data-p-4="ОК" data-p-5="1" data-p-6="Введите ваш логин для оплаты в терминале" data-p-7="1">
+                        <img src="images/iframe/contr-logo/106.png">
+                        <div class="item-title">Одноклассники</div>
+                    </div>
+                                    <div class="item" data-id="127" data-p-1="Танки Онлайн" data-p-2="" data-p-3="50.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите имя в игре" data-p-7="1">
+                        <img src="images/iframe/contr-logo/127.png">
+                        <div class="item-title">Танки Онлайн</div>
+                    </div>
+                                    <div class="item" data-id="497" data-p-1="4game" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/497.png">
+                        <div class="item-title">4game</div>
+                    </div>
+                                    <div class="item" data-id="599" data-p-1="World of Warships" data-p-2="" data-p-3="4.54" data-p-4="Золота" data-p-5="1" data-p-6="Введите игровой e-mail (логин)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/599.png">
+                        <div class="item-title">World of Warships</div>
+                    </div>
+                                    <div class="item" data-id="83" data-p-1="Prime World" data-p-2="" data-p-3="0.66" data-p-4="Золота" data-p-5="1" data-p-6="Укажите платежный логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/83.png">
+                        <div class="item-title">Prime World</div>
+                    </div>
+                                    <div class="item" data-id="18" data-p-1="Warface" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите игровой e-mail (логин)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/18.png">
+                        <div class="item-title">Warface</div>
+                    </div>
+                                    <div class="item" data-id="26" data-p-1="ПараПа: Город Танцев" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/26.png">
+                        <div class="item-title">ПараПа: Город Танцев</div>
+                    </div>
+                                    <div class="item" data-id="75" data-p-1="Небеса" data-p-2="" data-p-3="1.00" data-p-4="Монет" data-p-5="1" data-p-6="Введите номер счета в Небесном банке" data-p-7="1">
+                        <img src="images/iframe/contr-logo/75.png">
+                        <div class="item-title">Небеса</div>
+                    </div>
+                                    <div class="item" data-id="54" data-p-1="Мusicwars" data-p-2="" data-p-3="0.21" data-p-4="Рубин" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/54.png">
+                        <div class="item-title">Мusicwars</div>
+                    </div>
+                                
+                <div class="clear"></div>
+            </div>
         </div>
     </div>
-    <div class="pad pad1">
-        <input type="text" placeholder="Введите название ресурса" id="filter" name="filter" />
+</div>
+
+<input type="text" placeholder="Введите название игры" id="filter_s" name="filter_s" class="input-txt" />
+
+</div>
+
+<div class="wrapper">
+    <div class="items-c" id="items-slider">
+        <div class="arrow arrow-left"></div>
+        <div class="arrow arrow-right"></div>
+        <div class="items-inner-c">
+            <div class="items-inner">
+                    <div class="item" data-id="11" data-p-1="Аллоды Онлайн" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/11.png">
+                        <div class="item-title">Аллоды Онлайн</div>
+                    </div>
+                                    <div class="item" data-id="15" data-p-1="World of Tanks" data-p-2="" data-p-3="4.54" data-p-4="Золота" data-p-5="1" data-p-6="Введите электронную почту" data-p-7="1">
+                        <img src="images/iframe/contr-logo/15.png">
+                        <div class="item-title">World of Tanks</div>
+                    </div>
+                                    <div class="item" data-id="18" data-p-1="Warface" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите игровой e-mail (логин)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/18.png">
+                        <div class="item-title">Warface</div>
+                    </div>
+                                    <div class="item" data-id="25" data-p-1="Cross Fire" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="укажите логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/25.png">
+                        <div class="item-title">Cross Fire</div>
+                    </div>
+                                    <div class="item" data-id="26" data-p-1="ПараПа: Город Танцев" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/26.png">
+                        <div class="item-title">ПараПа: Город Танцев</div>
+                    </div>
+                                    <div class="item" data-id="33" data-p-1="RIOT zone" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/33.png">
+                        <div class="item-title">RIOT zone</div>
+                    </div>
+                                    <div class="item" data-id="43" data-p-1="Вконтакте" data-p-2="" data-p-3="0.14" data-p-4="Голосов" data-p-5="1" data-p-6="Введите свой ID" data-p-7="1">
+                        <img src="images/iframe/contr-logo/43.png">
+                        <div class="item-title">Вконтакте</div>
+                    </div>
+                                    <div class="item" data-id="51" data-p-1="Jade Dynasty" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/51.png">
+                        <div class="item-title">Jade Dynasty</div>
+                    </div>
+                                    <div class="item" data-id="53" data-p-1="Джаггернаут" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/53.png">
+                        <div class="item-title">Джаггернаут</div>
+                    </div>
+                                    <div class="item" data-id="54" data-p-1="Мusicwars" data-p-2="" data-p-3="0.21" data-p-4="Рубин" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/54.png">
+                        <div class="item-title">Мusicwars</div>
+                    </div>
+                                    <div class="item" data-id="70" data-p-1="Perfect World" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/70.png">
+                        <div class="item-title">Perfect World</div>
+                    </div>
+                                    <div class="item" data-id="71" data-p-1="Бумз! (DDT)" data-p-2="" data-p-3="20.00" data-p-4="Валюты" data-p-5="1" data-p-6="Укажите id вашего счета" data-p-7="1">
+                        <img src="images/iframe/contr-logo/71.png">
+                        <div class="item-title">Бумз! (DDT)</div>
+                    </div>
+                                    <div class="item" data-id="75" data-p-1="Небеса" data-p-2="" data-p-3="1.00" data-p-4="Монет" data-p-5="1" data-p-6="Введите номер счета в Небесном банке" data-p-7="1">
+                        <img src="images/iframe/contr-logo/75.png">
+                        <div class="item-title">Небеса</div>
+                    </div>
+                                    <div class="item" data-id="83" data-p-1="Prime World" data-p-2="" data-p-3="0.66" data-p-4="Золота" data-p-5="1" data-p-6="Укажите платежный логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/83.png">
+                        <div class="item-title">Prime World</div>
+                    </div>
+                                    <div class="item" data-id="86" data-p-1="MosWar" data-p-2="" data-p-3="0.23" data-p-4="Меда" data-p-5="1" data-p-6="Введите идентификатор персонажа" data-p-7="1">
+                        <img src="images/iframe/contr-logo/86.png">
+                        <div class="item-title">MosWar</div>
+                    </div>
+                                    <div class="item" data-id="94" data-p-1="Klanz" data-p-2="" data-p-3="0.50" data-p-4="Кредитов" data-p-5="1" data-p-6="Введите свой никнейм" data-p-7="1">
+                        <img src="images/iframe/contr-logo/94.png">
+                        <div class="item-title">Klanz</div>
+                    </div>
+                                    <div class="item" data-id="104" data-p-1="MyLands" data-p-2="" data-p-3="0.85" data-p-4="Жемчужин" data-p-5="1" data-p-6="Введите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/104.png">
+                        <div class="item-title">MyLands</div>
+                    </div>
+                                    <div class="item" data-id="106" data-p-1="Одноклассники" data-p-2="" data-p-3="1.00" data-p-4="ОК" data-p-5="1" data-p-6="Введите ваш логин для оплаты в терминале" data-p-7="1">
+                        <img src="images/iframe/contr-logo/106.png">
+                        <div class="item-title">Одноклассники</div>
+                    </div>
+                                    <div class="item" data-id="112" data-p-1="Герои Войны и Денег" data-p-2="" data-p-3="0.03" data-p-4="Бриллианта" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/112.png">
+                        <div class="item-title">Герои Войны и Денег</div>
+                    </div>
+                                    <div class="item" data-id="127" data-p-1="Танки Онлайн" data-p-2="" data-p-3="50.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите имя в игре" data-p-7="1">
+                        <img src="images/iframe/contr-logo/127.png">
+                        <div class="item-title">Танки Онлайн</div>
+                    </div>
+                                    <div class="item" data-id="130" data-p-1="Мирчар" data-p-2="" data-p-3="0.02" data-p-4="Маркаситы" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/130.png">
+                        <div class="item-title">Мирчар</div>
+                    </div>
+                                    <div class="item" data-id="132" data-p-1="FireStorm" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Введите эл. почту" data-p-7="1">
+                        <img src="images/iframe/contr-logo/132.png">
+                        <div class="item-title">FireStorm</div>
+                    </div>
+                                    <div class="item" data-id="135" data-p-1="Hellgard" data-p-2="" data-p-3="1.00" data-p-4="Золота" data-p-5="1" data-p-6="Введите ваш ник" data-p-7="1">
+                        <img src="images/iframe/contr-logo/135.png">
+                        <div class="item-title">Hellgard</div>
+                    </div>
+                                    <div class="item" data-id="142" data-p-1="Steam" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Введите название аккаунта" data-p-7="1">
+                        <img src="images/iframe/contr-logo/142.png">
+                        <div class="item-title">Steam</div>
+                    </div>
+                                    <div class="item" data-id="237" data-p-1="Ferma sosedi" data-p-2="" data-p-3="0.95" data-p-4="Золота" data-p-5="1" data-p-6="укажите логин с Fermasosedi.Ru" data-p-7="1">
+                        <img src="images/iframe/contr-logo/237.png">
+                        <div class="item-title">Ferma sosedi</div>
+                    </div>
+                                    <div class="item" data-id="255" data-p-1="Техномагия GDteam" data-p-2="" data-p-3="0.95" data-p-4="Кристалла" data-p-5="1" data-p-6="Введите имя своего персонажа" data-p-7="1">
+                        <img src="images/iframe/contr-logo/255.png">
+                        <div class="item-title">Техномагия GDteam</div>
+                    </div>
+                                    <div class="item" data-id="261" data-p-1="Taern" data-p-2="" data-p-3="0.60" data-p-4="Империалов" data-p-5="1" data-p-6="Введите свой никнейм" data-p-7="1">
+                        <img src="images/iframe/contr-logo/261.png">
+                        <div class="item-title">Taern</div>
+                    </div>
+                                    <div class="item" data-id="278" data-p-1="Cheloveche" data-p-2="" data-p-3="0.55" data-p-4="валюты" data-p-5="1" data-p-6="Укажите никнейм персонажа" data-p-7="1">
+                        <img src="images/iframe/contr-logo/278.png">
+                        <div class="item-title">Cheloveche</div>
+                    </div>
+                                    <div class="item" data-id="317" data-p-1="Смешарики" data-p-2="" data-p-3="0.21" data-p-4="Рубин" data-p-5="1" data-p-6="Введите ваш личный номер аккаунта" data-p-7="1">
+                        <img src="images/iframe/contr-logo/317.png">
+                        <div class="item-title">Смешарики</div>
+                    </div>
+                                    <div class="item" data-id="322" data-p-1="Пароград" data-p-2="" data-p-3="6.25" data-p-4="Валюты" data-p-5="1" data-p-6="Введите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/322.png">
+                        <div class="item-title">Пароград</div>
+                    </div>
+                                    <div class="item" data-id="326" data-p-1="ArcheAge" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/326.png">
+                        <div class="item-title">ArcheAge</div>
+                    </div>
+                                    <div class="item" data-id="393" data-p-1="War Thunder" data-p-2="" data-p-3="3.30" data-p-4="Орла" data-p-5="1" data-p-6="Введите игровой e-mail (логин)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/393.png">
+                        <div class="item-title">War Thunder</div>
+                    </div>
+                                    <div class="item" data-id="403" data-p-1="War2149" data-p-2="" data-p-3="175.00" data-p-4="Антиматерии" data-p-5="1" data-p-6="Введите игровой email" data-p-7="1">
+                        <img src="images/iframe/contr-logo/403.png">
+                        <div class="item-title">War2149</div>
+                    </div>
+                                    <div class="item" data-id="410" data-p-1="Мафия онлайн" data-p-2="" data-p-3="0.02" data-p-4="Евромаф" data-p-5="1" data-p-6="Ваш номер счёта в банке «Мафии онлайн»" data-p-7="1">
+                        <img src="images/iframe/contr-logo/410.png">
+                        <div class="item-title">Мафия онлайн</div>
+                    </div>
+                                    <div class="item" data-id="415" data-p-1="Cosmowar" data-p-2="" data-p-3="25.00" data-p-4="Темной Материи" data-p-5="1" data-p-6="укажите свой e-mail" data-p-7="1">
+                        <img src="images/iframe/contr-logo/415.png">
+                        <div class="item-title">Cosmowar</div>
+                    </div>
+                                    <div class="item" data-id="421" data-p-1="Astro Lords" data-p-2="" data-p-3="0.76" data-p-4="Дейтерий" data-p-5="1" data-p-6="Введите текущее игровое имя" data-p-7="1">
+                        <img src="images/iframe/contr-logo/421.png">
+                        <div class="item-title">Astro Lords</div>
+                    </div>
+                                    <div class="item" data-id="462" data-p-1="Ninja Wars" data-p-2="" data-p-3="2.00" data-p-4="Купонов" data-p-5="1" data-p-6="Введите ваш ID" data-p-7="1">
+                        <img src="images/iframe/contr-logo/462.png">
+                        <div class="item-title">Ninja Wars</div>
+                    </div>
+                                    <div class="item" data-id="464" data-p-1="Фотострана" data-p-2="" data-p-3="0.05" data-p-4="ФМ" data-p-5="1" data-p-6="Укажите свой e-mail" data-p-7="1">
+                        <img src="images/iframe/contr-logo/464.png">
+                        <div class="item-title">Фотострана</div>
+                    </div>
+                                    <div class="item" data-id="495" data-p-1="Rageline: В БОЙ!" data-p-2="" data-p-3="0.10" data-p-4="Валюты" data-p-5="1" data-p-6="Введите свой идентификатор (можно узнать в игровом Банке, в разделе «получить бесплатно»)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/495.png">
+                        <div class="item-title">Rageline: В БОЙ!</div>
+                    </div>
+                                    <div class="item" data-id="497" data-p-1="4game" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/497.png">
+                        <div class="item-title">4game</div>
+                    </div>
+                                    <div class="item" data-id="518" data-p-1="LovePlanet" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/518.png">
+                        <div class="item-title">LovePlanet</div>
+                    </div>
+                                    <div class="item" data-id="545" data-p-1="SkyForge" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/545.png">
+                        <div class="item-title">SkyForge</div>
+                    </div>
+                                    <div class="item" data-id="551" data-p-1="Раздор" data-p-2="" data-p-3="0.03" data-p-4="Валюты" data-p-5="1" data-p-6="Укажите имя аккаунта в игре" data-p-7="1">
+                        <img src="images/iframe/contr-logo/551.png">
+                        <div class="item-title">Раздор</div>
+                    </div>
+                                    <div class="item" data-id="568" data-p-1="Zzima" data-p-2="" data-p-3="0.60" data-p-4="Zgold" data-p-5="1" data-p-6="Введите логин ZZima" data-p-7="1">
+                        <img src="images/iframe/contr-logo/568.png">
+                        <div class="item-title">Zzima</div>
+                    </div>
+                                    <div class="item" data-id="599" data-p-1="World of Warships" data-p-2="" data-p-3="4.54" data-p-4="Золота" data-p-5="1" data-p-6="Введите игровой e-mail (логин)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/599.png">
+                        <div class="item-title">World of Warships</div>
+                    </div>
+                                    <div class="item" data-id="615" data-p-1="CS GO покупка скинов (http://csgoigra.ru/)" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Укажите свой steam id" data-p-7="1">
+                        <img src="images/iframe/contr-logo/615.png">
+                        <div class="item-title">CS GO покупка скинов (http://csgoigra.ru/)</div>
+                    </div>
+                                    <div class="item" data-id="622" data-p-1="Онлайн Фермер" data-p-2="" data-p-3="95.00" data-p-4="Валюты" data-p-5="1" data-p-6="Укажите ваш логин в игре" data-p-7="1">
+                        <img src="images/iframe/contr-logo/622.png">
+                        <div class="item-title">Онлайн Фермер</div>
+                    </div>
+                                    <div class="item" data-id="623" data-p-1="Dota 2 покупка скинов (http://csgoigra.ru/)" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Укажите свой steam id" data-p-7="1">
+                        <img src="images/iframe/contr-logo/623.png">
+                        <div class="item-title">Dota 2 покупка скинов (http://csgoigra.ru/)</div>
+                    </div>
+                                    <div class="item" data-id="624" data-p-1="101xp" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="введите свой игровой ID" data-p-7="1">
+                        <img src="images/iframe/contr-logo/624.png">
+                        <div class="item-title">101xp</div>
+                    </div>
+                                    <div class="item" data-id="628" data-p-1="GameXP" data-p-2="" data-p-3="0.05" data-p-4="GXP" data-p-5="1" data-p-6="укажите свой email" data-p-7="1">
+                        <img src="images/iframe/contr-logo/628.png">
+                        <div class="item-title">GameXP</div>
+                    </div>
+                                    <div class="item" data-id="644" data-p-1="Panzar" data-p-2="" data-p-3="0.74" data-p-4="кристалла" data-p-5="1" data-p-6="Введите имя персонажа" data-p-7="1">
+                        <img src="images/iframe/contr-logo/644.png">
+                        <div class="item-title">Panzar</div>
+                    </div>
+                                    <div class="item" data-id="655" data-p-1="Armored Warfare: Проект Армата" data-p-2="" data-p-3="1.00" data-p-4="Кристаллов" data-p-5="1" data-p-6="Введите логин (Ваш е-mail)" data-p-7="1">
+                        <img src="images/iframe/contr-logo/655.png">
+                        <div class="item-title">Armored Warfare: Проект Армата</div>
+                    </div>
+                                    <div class="item" data-id="660" data-p-1="Real-ferma" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Укажите ваш логин" data-p-7="1">
+                        <img src="images/iframe/contr-logo/660.png">
+                        <div class="item-title">Real-ferma</div>
+                    </div>
+                                    <div class="item" data-id="668" data-p-1="Game Coast" data-p-2="" data-p-3="1.00" data-p-4="Рублей" data-p-5="1" data-p-6="Укажите свой email" data-p-7="1">
+                        <img src="images/iframe/contr-logo/668.png">
+                        <div class="item-title">Game Coast</div>
+                    </div>
+                                    <div class="item" data-id="670" data-p-1="Xterium RU4" data-p-2="" data-p-3="250.00" data-p-4="Валюты" data-p-5="1" data-p-6="Укажите свой email" data-p-7="1">
+                        <img src="images/iframe/contr-logo/670.png">
+                        <div class="item-title">Xterium RU4</div>
+                    </div>
+                                
+            </div>
+        </div>
     </div>
-    <div class="wrapper">
-        <div class="items-c" id="items-slider">
-            <div class="arrow arrow-left"></div>
-            <div class="arrow arrow-right"></div>
-            <div class="item">
-                <img src="images/iframe/contr-logo/4game.png" />
+</div>
+
+</div>
+
             </div>
-            <div class="item">
-                <img src="images/iframe/contr-logo/101xp.png" />
+        
+        <div class="slide-c" id="slide_3">
+            <div class="wrapper slide-inner-mid">
+                <div class="btitle slide-title">Ваш запрос #<span id="id-out">123456789</span> обрабатывается.<br/>Средства поступят на аккаунт в течении 24 часов.</div>
             </div>
-            <div class="item">
-                <img src="images/iframe/contr-logo/allods-online.png" />
-            </div>
-            <div class="item">
-                <img src="images/iframe/contr-logo/Arche-age.png" />
-            </div>
-            <div class="item">
-                <img src="images/iframe/contr-logo/4game.png" />
-            </div>
-            <div class="item">
-                <img src="images/iframe/contr-logo/4game.png" />
-            </div>
-            <div class="item">
-                <img src="images/iframe/contr-logo/4game.png" />
-            </div>
-            <div class="item">
-                <img src="images/iframe/contr-logo/4game.png" />
+            <div class="bg-img"></div>
+        </div>
+        
+    </div>
+    <div class="bmenu">
+        <div class="pad-c">
+            <a class="item-menu item1" target="_blank" href="https://wasdclub.com/rules/{$partner.slug}">правила</a>
+            <a class="item-menu item2" target="_blank" href="https://wasdclub.com/courses/{$partner.slug}">курсы</a>
+            <div class="item-menu item3">
+                <span class="label fl">техническая поддержка:</span>
+                <span class="fl email-img"></span>
+                <a class="fl" href="mailto:{$partner.slug}@wasdclub.com">semya@wasdclub.com</a>
             </div>
             <div class="clear"></div>
         </div>
     </div>
-    <div class="pad pad2">
-        <!--
-        <span class="pad-title">Техническая поддержка</span>
-        <form id="form_support" method="get" action="https://wasdclub.com/support">
-            <input type="button" id="btn-support" name="btn_support" value="Задать вопрос" />
-        </form>
-        -->
-        <div class="copy">&copy;&nbsp;WASD LLC 2017</div>
-    </div>
+    <div class="copy">&copy;&nbsp;WASD LLC 2017</div>
 </body>
 </html>
-
